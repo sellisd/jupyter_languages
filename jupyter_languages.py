@@ -40,8 +40,7 @@ def language_histogram(input_path):
     sns.set_theme(style="ticks", rc=custom_params)
     pd.DataFrame.from_dict(languages,
                            orient='index',
-                           columns=['language']).plot.bar()
-    plt.xticks(rotation=30, horizontalalignment="center")
+                           columns=['language']).sort_values(by='language').plot.barh()
     plt.savefig('hist.png')
     return(languages)
 
